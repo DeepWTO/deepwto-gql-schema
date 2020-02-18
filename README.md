@@ -27,5 +27,6 @@ type Factual
   version: String!
   factual: String!
 }
-
+```
 With `@key` directive, we allocate `ds` as the partition-key and `version` as the sort-key(version). We can allocate multiple sort-key-varaint over one-partition key where `sort-key` works for the version control. 
+
