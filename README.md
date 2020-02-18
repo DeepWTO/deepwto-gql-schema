@@ -28,5 +28,38 @@ type Factual
   factual: String!
 }
 ```
-With `@key` directive, we allocate `ds` as the partition-key and `version` as the sort-key(version). We can allocate multiple sort-key-varaint over one-partition key where `sort-key` works for the version control. 
+With `@key` directive, we allocate `ds` as the partition-key and `version` as the sort-key. Since we can allocate multiple sort-key-varaint over one-partition key, `sort-key` can serve for the version control functionality. 
 
+## Example Queries/Mutation
+### To Write on DB
+```bash
+mutation CreateFactual {
+  createFactual(
+    input: 
+    {ds: 1, version: "1.0.1", factual: "Korea-does-something-wrong-and.."}
+  ) 
+  {
+    ds
+    version
+    factual
+  }
+}
+```
+
+### To Query on DB
+
+```bash
+query ListFactuals {
+  listFactuals(
+    ds: 1,
+    version: {eq: "1.0.0"}
+  ) {
+    items {
+      ds
+      version
+      factual
+    }
+    nextToken
+  }
+}
+```
