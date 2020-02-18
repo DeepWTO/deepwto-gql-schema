@@ -1,5 +1,7 @@
-type Todo @model {
-  id: ID!
-  name: String!
-  description: String
+type Factual
+  @model
+  @key(fields: ["ds", "version"]) { # this field list allocate username as an partition-key(id)
+  ds: Int!
+  version: String!
+  factual: String!
 }
