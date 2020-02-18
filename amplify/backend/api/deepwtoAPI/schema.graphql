@@ -1,6 +1,6 @@
 type Factual
   @model
-  @key(fields: ["ds", "version"]) { # this field list allocate username as an partition-key(id)
+  @key(fields: ["ds", "version"]) { # this field list allocate ds as an partition-key and version as the sort-key. # note that we can allocate multiple sort-key-varaint over one-partition key
   ds: Int!
   version: String!
   factual: String!
