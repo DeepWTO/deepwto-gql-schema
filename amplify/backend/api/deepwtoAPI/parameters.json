@@ -1,5 +1,5 @@
 {
-    "AppSyncApiName": "deepwto",
+    "AppSyncApiName": "deepwtoAPI",
     "DynamoDBBillingMode": "PAY_PER_REQUEST",
     "DynamoDBEnableServerSideEncryption": "false"
 }
