@@ -1,5 +1,5 @@
 projects:
-  deepwto:
+  deepwtoAPI:
     schemaPath: src/graphql/schema.json
     includes:
       - src/graphql/**/*.ts

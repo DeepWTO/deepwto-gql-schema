@@ -1,66 +1,27 @@
 // tslint:disable
 // this is an auto generated file. This will be overwritten
 
-export const onCreateArticleTokens = `subscription OnCreateArticleTokens {
-  onCreateArticleTokens {
-    article
-    tokens
-  }
-}
-`;
-export const onUpdateArticleTokens = `subscription OnUpdateArticleTokens {
-  onUpdateArticleTokens {
-    article
-    tokens
-  }
-}
-`;
-export const onDeleteArticleTokens = `subscription OnDeleteArticleTokens {
-  onDeleteArticleTokens {
-    article
-    tokens
-  }
-}
-`;
-export const onCreateFactualTokens = `subscription OnCreateFactualTokens {
-  onCreateFactualTokens {
+export const onCreateFactual = `subscription OnCreateFactual {
+  onCreateFactual {
     ds
-    tokens
+    version
+    factual
   }
 }
 `;
-export const onUpdateFactualTokens = `subscription OnUpdateFactualTokens {
-  onUpdateFactualTokens {
+export const onUpdateFactual = `subscription OnUpdateFactual {
+  onUpdateFactual {
     ds
-    tokens
+    version
+    factual
   }
 }
 `;
-export const onDeleteFactualTokens = `subscription OnDeleteFactualTokens {
-  onDeleteFactualTokens {
+export const onDeleteFactual = `subscription OnDeleteFactual {
+  onDeleteFactual {
     ds
-    tokens
-  }
-}
-`;
-export const onCreateCited = `subscription OnCreateCited {
-  onCreateCited {
-    ds_article
-    label
-  }
-}
-`;
-export const onUpdateCited = `subscription OnUpdateCited {
-  onUpdateCited {
-    ds_article
-    label
-  }
-}
-`;
-export const onDeleteCited = `subscription OnDeleteCited {
-  onDeleteCited {
-    ds_article
-    label
+    version
+    factual
   }
 }
 `;
