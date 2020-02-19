@@ -12,7 +12,7 @@ DeepWTO data streaming API designed with { GraphQL, Amplify, AWS DynamoDB, AppSy
   - The schema is cloud-accessible via `AWS AppSync` API Endpoint
 
 Check the schema :
-https://github.com/syyunn/deepwto-stream/blob/master/amplify/backend/api/deepwto/schema.graphql
+https://github.com/DeepWTO/deepwto-stream/blob/master/amplify/backend/api/deepwtoAPI/schema.graphql
 
 ## API Key
 Currently we limits the access to the DB with `API Key`. Request `syyun@snu.ac.kr` to get access to the DynamoDB w. API Key
