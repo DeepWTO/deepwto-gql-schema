@@ -1,10 +1,10 @@
 # deepwto-stream
-DeepWTO data streaming API designed with { GraphQL, Amplify, AWS DynamoDB, AppSync}
+DeepWTO Database DB-Schema/Streaming API  Design with { AWS GraphQL, Amplify CLI, DynamoDB, AppSync, CloudFront}
 
 ## Goals
-- [ ] Design Database Schema
+- [x] Design Database Schema
 - [ ] Write initial version of DeepWTO Data to AWS DynamoDB
-- [ ] Versioning of AWS DynamoDB
+- [x] Versioning of AWS DynamoDB
 
 ## DB Schema
   - GraphQL schema is built using `AWS Amplify CLI` 
