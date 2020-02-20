@@ -34,3 +34,36 @@ export const listFactuals = `query ListFactuals(
   }
 }
 `;
+export const getGatt = `query GetGatt($article: String!, $version: String!) {
+  getGATT(article: $article, version: $version) {
+    article
+    version
+    content
+  }
+}
+`;
+export const listGatTs = `query ListGatTs(
+  $article: String
+  $version: ModelStringKeyConditionInput
+  $filter: ModelGATTFilterInput
+  $limit: Int
+  $nextToken: String
+  $sortDirection: ModelSortDirection
+) {
+  listGATTs(
+    article: $article
+    version: $version
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    sortDirection: $sortDirection
+  ) {
+    items {
+      article
+      version
+      content
+    }
+    nextToken
+  }
+}
+`;

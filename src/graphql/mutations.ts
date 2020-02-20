@@ -34,3 +34,36 @@ export const deleteFactual = `mutation DeleteFactual(
   }
 }
 `;
+export const createGatt = `mutation CreateGatt(
+  $input: CreateGATTInput!
+  $condition: ModelGATTConditionInput
+) {
+  createGATT(input: $input, condition: $condition) {
+    article
+    version
+    content
+  }
+}
+`;
+export const updateGatt = `mutation UpdateGatt(
+  $input: UpdateGATTInput!
+  $condition: ModelGATTConditionInput
+) {
+  updateGATT(input: $input, condition: $condition) {
+    article
+    version
+    content
+  }
+}
+`;
+export const deleteGatt = `mutation DeleteGatt(
+  $input: DeleteGATTInput!
+  $condition: ModelGATTConditionInput
+) {
+  deleteGATT(input: $input, condition: $condition) {
+    article
+    version
+    content
+  }
+}
+`;
