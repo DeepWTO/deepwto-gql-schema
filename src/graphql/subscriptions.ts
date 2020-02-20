@@ -25,3 +25,27 @@ export const onDeleteFactual = `subscription OnDeleteFactual {
   }
 }
 `;
+export const onCreateGatt = `subscription OnCreateGatt {
+  onCreateGATT {
+    article
+    version
+    content
+  }
+}
+`;
+export const onUpdateGatt = `subscription OnUpdateGatt {
+  onUpdateGATT {
+    article
+    version
+    content
+  }
+}
+`;
+export const onDeleteGatt = `subscription OnDeleteGatt {
+  onDeleteGATT {
+    article
+    version
+    content
+  }
+}
+`;

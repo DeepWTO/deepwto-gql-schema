@@ -65,6 +65,30 @@ export type DeleteFactualInput = {
   version: string,
 };
 
+export type CreateGATTInput = {
+  article: string,
+  version: string,
+  content: string,
+};
+
+export type ModelGATTConditionInput = {
+  content?: ModelStringInput | null,
+  and?: Array< ModelGATTConditionInput | null > | null,
+  or?: Array< ModelGATTConditionInput | null > | null,
+  not?: ModelGATTConditionInput | null,
+};
+
+export type UpdateGATTInput = {
+  article: string,
+  version: string,
+  content?: string | null,
+};
+
+export type DeleteGATTInput = {
+  article: string,
+  version: string,
+};
+
 export type ModelStringKeyConditionInput = {
   eq?: string | null,
   le?: string | null,
@@ -101,6 +125,15 @@ export enum ModelSortDirection {
   DESC = "DESC",
 }
 
+
+export type ModelGATTFilterInput = {
+  article?: ModelStringInput | null,
+  version?: ModelStringInput | null,
+  content?: ModelStringInput | null,
+  and?: Array< ModelGATTFilterInput | null > | null,
+  or?: Array< ModelGATTFilterInput | null > | null,
+  not?: ModelGATTFilterInput | null,
+};
 
 export type CreateFactualMutationVariables = {
   input: CreateFactualInput,
@@ -144,6 +177,48 @@ export type DeleteFactualMutation = {
   } | null,
 };
 
+export type CreateGattMutationVariables = {
+  input: CreateGATTInput,
+  condition?: ModelGATTConditionInput | null,
+};
+
+export type CreateGattMutation = {
+  createGATT:  {
+    __typename: "GATT",
+    article: string,
+    version: string,
+    content: string,
+  } | null,
+};
+
+export type UpdateGattMutationVariables = {
+  input: UpdateGATTInput,
+  condition?: ModelGATTConditionInput | null,
+};
+
+export type UpdateGattMutation = {
+  updateGATT:  {
+    __typename: "GATT",
+    article: string,
+    version: string,
+    content: string,
+  } | null,
+};
+
+export type DeleteGattMutationVariables = {
+  input: DeleteGATTInput,
+  condition?: ModelGATTConditionInput | null,
+};
+
+export type DeleteGattMutation = {
+  deleteGATT:  {
+    __typename: "GATT",
+    article: string,
+    version: string,
+    content: string,
+  } | null,
+};
+
 export type GetFactualQueryVariables = {
   ds: number,
   version: string,
@@ -180,6 +255,42 @@ export type ListFactualsQuery = {
   } | null,
 };
 
+export type GetGattQueryVariables = {
+  article: string,
+  version: string,
+};
+
+export type GetGattQuery = {
+  getGATT:  {
+    __typename: "GATT",
+    article: string,
+    version: string,
+    content: string,
+  } | null,
+};
+
+export type ListGatTsQueryVariables = {
+  article?: string | null,
+  version?: ModelStringKeyConditionInput | null,
+  filter?: ModelGATTFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+  sortDirection?: ModelSortDirection | null,
+};
+
+export type ListGatTsQuery = {
+  listGATTs:  {
+    __typename: "ModelGATTConnection",
+    items:  Array< {
+      __typename: "GATT",
+      article: string,
+      version: string,
+      content: string,
+    } | null > | null,
+    nextToken: string | null,
+  } | null,
+};
+
 export type OnCreateFactualSubscription = {
   onCreateFactual:  {
     __typename: "Factual",
@@ -204,5 +315,32 @@ export type OnDeleteFactualSubscription = {
     ds: number,
     version: string,
     factual: string,
+  } | null,
+};
+
+export type OnCreateGattSubscription = {
+  onCreateGATT:  {
+    __typename: "GATT",
+    article: string,
+    version: string,
+    content: string,
+  } | null,
+};
+
+export type OnUpdateGattSubscription = {
+  onUpdateGATT:  {
+    __typename: "GATT",
+    article: string,
+    version: string,
+    content: string,
+  } | null,
+};
+
+export type OnDeleteGattSubscription = {
+  onDeleteGATT:  {
+    __typename: "GATT",
+    article: string,
+    version: string,
+    content: string,
   } | null,
 };
