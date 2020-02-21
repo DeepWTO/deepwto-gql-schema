@@ -89,6 +89,37 @@ export type DeleteGATTInput = {
   version: string,
 };
 
+export type CreateLabelInput = {
+  ds_art: string,
+  version: string,
+  cited: boolean,
+};
+
+export type ModelLabelConditionInput = {
+  cited?: ModelBooleanInput | null,
+  and?: Array< ModelLabelConditionInput | null > | null,
+  or?: Array< ModelLabelConditionInput | null > | null,
+  not?: ModelLabelConditionInput | null,
+};
+
+export type ModelBooleanInput = {
+  ne?: boolean | null,
+  eq?: boolean | null,
+  attributeExists?: boolean | null,
+  attributeType?: ModelAttributeTypes | null,
+};
+
+export type UpdateLabelInput = {
+  ds_art: string,
+  version: string,
+  cited?: boolean | null,
+};
+
+export type DeleteLabelInput = {
+  ds_art: string,
+  version: string,
+};
+
 export type ModelStringKeyConditionInput = {
   eq?: string | null,
   le?: string | null,
@@ -133,6 +164,15 @@ export type ModelGATTFilterInput = {
   and?: Array< ModelGATTFilterInput | null > | null,
   or?: Array< ModelGATTFilterInput | null > | null,
   not?: ModelGATTFilterInput | null,
+};
+
+export type ModelLabelFilterInput = {
+  ds_art?: ModelStringInput | null,
+  version?: ModelStringInput | null,
+  cited?: ModelBooleanInput | null,
+  and?: Array< ModelLabelFilterInput | null > | null,
+  or?: Array< ModelLabelFilterInput | null > | null,
+  not?: ModelLabelFilterInput | null,
 };
 
 export type CreateFactualMutationVariables = {
@@ -219,6 +259,48 @@ export type DeleteGattMutation = {
   } | null,
 };
 
+export type CreateLabelMutationVariables = {
+  input: CreateLabelInput,
+  condition?: ModelLabelConditionInput | null,
+};
+
+export type CreateLabelMutation = {
+  createLabel:  {
+    __typename: "Label",
+    ds_art: string,
+    version: string,
+    cited: boolean,
+  } | null,
+};
+
+export type UpdateLabelMutationVariables = {
+  input: UpdateLabelInput,
+  condition?: ModelLabelConditionInput | null,
+};
+
+export type UpdateLabelMutation = {
+  updateLabel:  {
+    __typename: "Label",
+    ds_art: string,
+    version: string,
+    cited: boolean,
+  } | null,
+};
+
+export type DeleteLabelMutationVariables = {
+  input: DeleteLabelInput,
+  condition?: ModelLabelConditionInput | null,
+};
+
+export type DeleteLabelMutation = {
+  deleteLabel:  {
+    __typename: "Label",
+    ds_art: string,
+    version: string,
+    cited: boolean,
+  } | null,
+};
+
 export type GetFactualQueryVariables = {
   ds: number,
   version: string,
@@ -291,6 +373,42 @@ export type ListGatTsQuery = {
   } | null,
 };
 
+export type GetLabelQueryVariables = {
+  ds_art: string,
+  version: string,
+};
+
+export type GetLabelQuery = {
+  getLabel:  {
+    __typename: "Label",
+    ds_art: string,
+    version: string,
+    cited: boolean,
+  } | null,
+};
+
+export type ListLabelsQueryVariables = {
+  ds_art?: string | null,
+  version?: ModelStringKeyConditionInput | null,
+  filter?: ModelLabelFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+  sortDirection?: ModelSortDirection | null,
+};
+
+export type ListLabelsQuery = {
+  listLabels:  {
+    __typename: "ModelLabelConnection",
+    items:  Array< {
+      __typename: "Label",
+      ds_art: string,
+      version: string,
+      cited: boolean,
+    } | null > | null,
+    nextToken: string | null,
+  } | null,
+};
+
 export type OnCreateFactualSubscription = {
   onCreateFactual:  {
     __typename: "Factual",
@@ -342,5 +460,32 @@ export type OnDeleteGattSubscription = {
     article: string,
     version: string,
     content: string,
+  } | null,
+};
+
+export type OnCreateLabelSubscription = {
+  onCreateLabel:  {
+    __typename: "Label",
+    ds_art: string,
+    version: string,
+    cited: boolean,
+  } | null,
+};
+
+export type OnUpdateLabelSubscription = {
+  onUpdateLabel:  {
+    __typename: "Label",
+    ds_art: string,
+    version: string,
+    cited: boolean,
+  } | null,
+};
+
+export type OnDeleteLabelSubscription = {
+  onDeleteLabel:  {
+    __typename: "Label",
+    ds_art: string,
+    version: string,
+    cited: boolean,
   } | null,
 };

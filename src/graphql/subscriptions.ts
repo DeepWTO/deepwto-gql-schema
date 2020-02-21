@@ -49,3 +49,27 @@ export const onDeleteGatt = `subscription OnDeleteGatt {
   }
 }
 `;
+export const onCreateLabel = `subscription OnCreateLabel {
+  onCreateLabel {
+    ds_art
+    version
+    cited
+  }
+}
+`;
+export const onUpdateLabel = `subscription OnUpdateLabel {
+  onUpdateLabel {
+    ds_art
+    version
+    cited
+  }
+}
+`;
+export const onDeleteLabel = `subscription OnDeleteLabel {
+  onDeleteLabel {
+    ds_art
+    version
+    cited
+  }
+}
+`;
