@@ -14,9 +14,6 @@ DeepWTO Database DB-Schema/Streaming API  Design with { AWS GraphQL, Amplify CLI
 Check the schema :
 https://github.com/DeepWTO/deepwto-stream/blob/master/amplify/backend/api/deepwtoAPI/schema.graphql
 
-## API Key
-Currently we limits the access to the DB with `API Key`. Request `syyun@snu.ac.kr` to get access to the DynamoDB w. API Key
-
 ## Schema Overview
 
 ```bash
