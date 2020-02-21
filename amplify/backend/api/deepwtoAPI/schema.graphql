@@ -20,4 +20,5 @@ type Label
   ds_art: String!
   version: String!
   cited: Boolean!
+  split: String
 }
