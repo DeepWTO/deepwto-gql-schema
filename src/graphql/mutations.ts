@@ -67,3 +67,39 @@ export const deleteGatt = `mutation DeleteGatt(
   }
 }
 `;
+export const createLabel = `mutation CreateLabel(
+  $input: CreateLabelInput!
+  $condition: ModelLabelConditionInput
+) {
+  createLabel(input: $input, condition: $condition) {
+    ds_art
+    version
+    cited
+    split
+  }
+}
+`;
+export const updateLabel = `mutation UpdateLabel(
+  $input: UpdateLabelInput!
+  $condition: ModelLabelConditionInput
+) {
+  updateLabel(input: $input, condition: $condition) {
+    ds_art
+    version
+    cited
+    split
+  }
+}
+`;
+export const deleteLabel = `mutation DeleteLabel(
+  $input: DeleteLabelInput!
+  $condition: ModelLabelConditionInput
+) {
+  deleteLabel(input: $input, condition: $condition) {
+    ds_art
+    version
+    cited
+    split
+  }
+}
+`;

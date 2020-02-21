@@ -13,3 +13,12 @@ type GATT
   version: String!
   content: String!
 }
+
+type Label
+  @model
+  @key(fields: ["ds_art", "version"]) { # this field list allocate ds as an partition-key and version as the sort-key. # note that we can allocate multiple sort-key-varaint over one-partition key
+  ds_art: String!
+  version: String!
+  cited: Boolean!
+  split: String
+}

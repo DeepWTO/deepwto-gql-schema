@@ -67,3 +67,38 @@ export const listGatTs = `query ListGatTs(
   }
 }
 `;
+export const getLabel = `query GetLabel($ds_art: String!, $version: String!) {
+  getLabel(ds_art: $ds_art, version: $version) {
+    ds_art
+    version
+    cited
+    split
+  }
+}
+`;
+export const listLabels = `query ListLabels(
+  $ds_art: String
+  $version: ModelStringKeyConditionInput
+  $filter: ModelLabelFilterInput
+  $limit: Int
+  $nextToken: String
+  $sortDirection: ModelSortDirection
+) {
+  listLabels(
+    ds_art: $ds_art
+    version: $version
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    sortDirection: $sortDirection
+  ) {
+    items {
+      ds_art
+      version
+      cited
+      split
+    }
+    nextToken
+  }
+}
+`;
