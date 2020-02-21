@@ -72,6 +72,7 @@ export const getLabel = `query GetLabel($ds_art: String!, $version: String!) {
     ds_art
     version
     cited
+    split
   }
 }
 `;
@@ -95,6 +96,7 @@ export const listLabels = `query ListLabels(
       ds_art
       version
       cited
+      split
     }
     nextToken
   }

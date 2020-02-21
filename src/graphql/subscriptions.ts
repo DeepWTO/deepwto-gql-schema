@@ -54,6 +54,7 @@ export const onCreateLabel = `subscription OnCreateLabel {
     ds_art
     version
     cited
+    split
   }
 }
 `;
@@ -62,6 +63,7 @@ export const onUpdateLabel = `subscription OnUpdateLabel {
     ds_art
     version
     cited
+    split
   }
 }
 `;
@@ -70,6 +72,7 @@ export const onDeleteLabel = `subscription OnDeleteLabel {
     ds_art
     version
     cited
+    split
   }
 }
 `;

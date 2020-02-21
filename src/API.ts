@@ -93,10 +93,12 @@ export type CreateLabelInput = {
   ds_art: string,
   version: string,
   cited: boolean,
+  split?: string | null,
 };
 
 export type ModelLabelConditionInput = {
   cited?: ModelBooleanInput | null,
+  split?: ModelStringInput | null,
   and?: Array< ModelLabelConditionInput | null > | null,
   or?: Array< ModelLabelConditionInput | null > | null,
   not?: ModelLabelConditionInput | null,
@@ -113,6 +115,7 @@ export type UpdateLabelInput = {
   ds_art: string,
   version: string,
   cited?: boolean | null,
+  split?: string | null,
 };
 
 export type DeleteLabelInput = {
@@ -170,6 +173,7 @@ export type ModelLabelFilterInput = {
   ds_art?: ModelStringInput | null,
   version?: ModelStringInput | null,
   cited?: ModelBooleanInput | null,
+  split?: ModelStringInput | null,
   and?: Array< ModelLabelFilterInput | null > | null,
   or?: Array< ModelLabelFilterInput | null > | null,
   not?: ModelLabelFilterInput | null,
@@ -270,6 +274,7 @@ export type CreateLabelMutation = {
     ds_art: string,
     version: string,
     cited: boolean,
+    split: string | null,
   } | null,
 };
 
@@ -284,6 +289,7 @@ export type UpdateLabelMutation = {
     ds_art: string,
     version: string,
     cited: boolean,
+    split: string | null,
   } | null,
 };
 
@@ -298,6 +304,7 @@ export type DeleteLabelMutation = {
     ds_art: string,
     version: string,
     cited: boolean,
+    split: string | null,
   } | null,
 };
 
@@ -384,6 +391,7 @@ export type GetLabelQuery = {
     ds_art: string,
     version: string,
     cited: boolean,
+    split: string | null,
   } | null,
 };
 
@@ -404,6 +412,7 @@ export type ListLabelsQuery = {
       ds_art: string,
       version: string,
       cited: boolean,
+      split: string | null,
     } | null > | null,
     nextToken: string | null,
   } | null,
@@ -469,6 +478,7 @@ export type OnCreateLabelSubscription = {
     ds_art: string,
     version: string,
     cited: boolean,
+    split: string | null,
   } | null,
 };
 
@@ -478,6 +488,7 @@ export type OnUpdateLabelSubscription = {
     ds_art: string,
     version: string,
     cited: boolean,
+    split: string | null,
   } | null,
 };
 
@@ -487,5 +498,6 @@ export type OnDeleteLabelSubscription = {
     ds_art: string,
     version: string,
     cited: boolean,
+    split: string | null,
   } | null,
 };

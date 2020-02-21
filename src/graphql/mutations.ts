@@ -75,6 +75,7 @@ export const createLabel = `mutation CreateLabel(
     ds_art
     version
     cited
+    split
   }
 }
 `;
@@ -86,6 +87,7 @@ export const updateLabel = `mutation UpdateLabel(
     ds_art
     version
     cited
+    split
   }
 }
 `;
@@ -97,6 +99,7 @@ export const deleteLabel = `mutation DeleteLabel(
     ds_art
     version
     cited
+    split
   }
 }
 `;
