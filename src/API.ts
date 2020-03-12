@@ -5,10 +5,12 @@ export type CreateFactualInput = {
   ds: number,
   version: string,
   factual: string,
+  factualTokenized: Array< string | null >,
 };
 
 export type ModelFactualConditionInput = {
   factual?: ModelStringInput | null,
+  factualTokenized?: ModelStringInput | null,
   and?: Array< ModelFactualConditionInput | null > | null,
   or?: Array< ModelFactualConditionInput | null > | null,
   not?: ModelFactualConditionInput | null,
@@ -58,6 +60,7 @@ export type UpdateFactualInput = {
   ds: number,
   version: string,
   factual?: string | null,
+  factualTokenized?: Array< string | null > | null,
 };
 
 export type DeleteFactualInput = {
@@ -69,10 +72,12 @@ export type CreateGATTInput = {
   article: string,
   version: string,
   content: string,
+  contentTokenized: Array< string | null >,
 };
 
 export type ModelGATTConditionInput = {
   content?: ModelStringInput | null,
+  contentTokenized?: ModelStringInput | null,
   and?: Array< ModelGATTConditionInput | null > | null,
   or?: Array< ModelGATTConditionInput | null > | null,
   not?: ModelGATTConditionInput | null,
@@ -82,6 +87,7 @@ export type UpdateGATTInput = {
   article: string,
   version: string,
   content?: string | null,
+  contentTokenized?: Array< string | null > | null,
 };
 
 export type DeleteGATTInput = {
@@ -137,6 +143,7 @@ export type ModelFactualFilterInput = {
   ds?: ModelIntInput | null,
   version?: ModelStringInput | null,
   factual?: ModelStringInput | null,
+  factualTokenized?: ModelStringInput | null,
   and?: Array< ModelFactualFilterInput | null > | null,
   or?: Array< ModelFactualFilterInput | null > | null,
   not?: ModelFactualFilterInput | null,
@@ -164,6 +171,7 @@ export type ModelGATTFilterInput = {
   article?: ModelStringInput | null,
   version?: ModelStringInput | null,
   content?: ModelStringInput | null,
+  contentTokenized?: ModelStringInput | null,
   and?: Array< ModelGATTFilterInput | null > | null,
   or?: Array< ModelGATTFilterInput | null > | null,
   not?: ModelGATTFilterInput | null,
@@ -190,6 +198,7 @@ export type CreateFactualMutation = {
     ds: number,
     version: string,
     factual: string,
+    factualTokenized: Array< string | null >,
   } | null,
 };
 
@@ -204,6 +213,7 @@ export type UpdateFactualMutation = {
     ds: number,
     version: string,
     factual: string,
+    factualTokenized: Array< string | null >,
   } | null,
 };
 
@@ -218,6 +228,7 @@ export type DeleteFactualMutation = {
     ds: number,
     version: string,
     factual: string,
+    factualTokenized: Array< string | null >,
   } | null,
 };
 
@@ -232,6 +243,7 @@ export type CreateGattMutation = {
     article: string,
     version: string,
     content: string,
+    contentTokenized: Array< string | null >,
   } | null,
 };
 
@@ -246,6 +258,7 @@ export type UpdateGattMutation = {
     article: string,
     version: string,
     content: string,
+    contentTokenized: Array< string | null >,
   } | null,
 };
 
@@ -260,6 +273,7 @@ export type DeleteGattMutation = {
     article: string,
     version: string,
     content: string,
+    contentTokenized: Array< string | null >,
   } | null,
 };
 
@@ -319,6 +333,7 @@ export type GetFactualQuery = {
     ds: number,
     version: string,
     factual: string,
+    factualTokenized: Array< string | null >,
   } | null,
 };
 
@@ -339,6 +354,7 @@ export type ListFactualsQuery = {
       ds: number,
       version: string,
       factual: string,
+      factualTokenized: Array< string | null >,
     } | null > | null,
     nextToken: string | null,
   } | null,
@@ -355,6 +371,7 @@ export type GetGattQuery = {
     article: string,
     version: string,
     content: string,
+    contentTokenized: Array< string | null >,
   } | null,
 };
 
@@ -375,6 +392,7 @@ export type ListGatTsQuery = {
       article: string,
       version: string,
       content: string,
+      contentTokenized: Array< string | null >,
     } | null > | null,
     nextToken: string | null,
   } | null,
@@ -424,6 +442,7 @@ export type OnCreateFactualSubscription = {
     ds: number,
     version: string,
     factual: string,
+    factualTokenized: Array< string | null >,
   } | null,
 };
 
@@ -433,6 +452,7 @@ export type OnUpdateFactualSubscription = {
     ds: number,
     version: string,
     factual: string,
+    factualTokenized: Array< string | null >,
   } | null,
 };
 
@@ -442,6 +462,7 @@ export type OnDeleteFactualSubscription = {
     ds: number,
     version: string,
     factual: string,
+    factualTokenized: Array< string | null >,
   } | null,
 };
 
@@ -451,6 +472,7 @@ export type OnCreateGattSubscription = {
     article: string,
     version: string,
     content: string,
+    contentTokenized: Array< string | null >,
   } | null,
 };
 
@@ -460,6 +482,7 @@ export type OnUpdateGattSubscription = {
     article: string,
     version: string,
     content: string,
+    contentTokenized: Array< string | null >,
   } | null,
 };
 
@@ -469,6 +492,7 @@ export type OnDeleteGattSubscription = {
     article: string,
     version: string,
     content: string,
+    contentTokenized: Array< string | null >,
   } | null,
 };
 

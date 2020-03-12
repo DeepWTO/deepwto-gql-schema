@@ -6,6 +6,7 @@ export const getFactual = `query GetFactual($ds: Int!, $version: String!) {
     ds
     version
     factual
+    factualTokenized
   }
 }
 `;
@@ -29,6 +30,7 @@ export const listFactuals = `query ListFactuals(
       ds
       version
       factual
+      factualTokenized
     }
     nextToken
   }
@@ -39,6 +41,7 @@ export const getGatt = `query GetGatt($article: String!, $version: String!) {
     article
     version
     content
+    contentTokenized
   }
 }
 `;
@@ -62,6 +65,7 @@ export const listGatTs = `query ListGatTs(
       article
       version
       content
+      contentTokenized
     }
     nextToken
   }

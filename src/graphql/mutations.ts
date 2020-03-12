@@ -9,6 +9,7 @@ export const createFactual = `mutation CreateFactual(
     ds
     version
     factual
+    factualTokenized
   }
 }
 `;
@@ -20,6 +21,7 @@ export const updateFactual = `mutation UpdateFactual(
     ds
     version
     factual
+    factualTokenized
   }
 }
 `;
@@ -31,6 +33,7 @@ export const deleteFactual = `mutation DeleteFactual(
     ds
     version
     factual
+    factualTokenized
   }
 }
 `;
@@ -42,6 +45,7 @@ export const createGatt = `mutation CreateGatt(
     article
     version
     content
+    contentTokenized
   }
 }
 `;
@@ -53,6 +57,7 @@ export const updateGatt = `mutation UpdateGatt(
     article
     version
     content
+    contentTokenized
   }
 }
 `;
@@ -64,6 +69,7 @@ export const deleteGatt = `mutation DeleteGatt(
     article
     version
     content
+    contentTokenized
   }
 }
 `;

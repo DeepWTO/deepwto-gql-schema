@@ -4,6 +4,7 @@ type Factual
   ds: Int!
   version: String!
   factual: String!
+  factualTokenized: [String]!
 }
 
 type GATT
@@ -12,6 +13,7 @@ type GATT
   article: String!
   version: String!
   content: String!
+  contentTokenized: [String]!
 }
 
 type Label

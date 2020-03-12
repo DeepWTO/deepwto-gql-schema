@@ -6,6 +6,7 @@ export const onCreateFactual = `subscription OnCreateFactual {
     ds
     version
     factual
+    factualTokenized
   }
 }
 `;
@@ -14,6 +15,7 @@ export const onUpdateFactual = `subscription OnUpdateFactual {
     ds
     version
     factual
+    factualTokenized
   }
 }
 `;
@@ -22,6 +24,7 @@ export const onDeleteFactual = `subscription OnDeleteFactual {
     ds
     version
     factual
+    factualTokenized
   }
 }
 `;
@@ -30,6 +33,7 @@ export const onCreateGatt = `subscription OnCreateGatt {
     article
     version
     content
+    contentTokenized
   }
 }
 `;
@@ -38,6 +42,7 @@ export const onUpdateGatt = `subscription OnUpdateGatt {
     article
     version
     content
+    contentTokenized
   }
 }
 `;
@@ -46,6 +51,7 @@ export const onDeleteGatt = `subscription OnDeleteGatt {
     article
     version
     content
+    contentTokenized
   }
 }
 `;
